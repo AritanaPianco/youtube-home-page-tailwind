@@ -1,0 +1,15 @@
+{
+  "name": "clone-youtube",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./input.css -o ./build/css/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.5"
+  }
+}

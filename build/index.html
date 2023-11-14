@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script defer src="script.js"></script>   
+    <link rel="stylesheet" href="css/output.css">
+    <title>Youtube</title>
+</head>
+<body class="bg-zinc-950"> 
+  
+    <main class="w-full flex flex-col text-white scroll-smooth">
+         <header class="z-10 w-full max-w-full flex bg-zinc-950 items-center justify-between py-2 px-1 md:py-3 fixed top-0">
+               <div class="flex md: items-center">
+                       <i class="ri-menu-line text-white hidden md:block md:text-xl cursor-pointer ml-2 rounded-full px-2 py-1 hover:bg-bgIcon duration-200"></i>  
+                       <svg class="w-7 md:w-9 md:ml-4" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"  viewBox="0 0 48 48">
+                           <path fill="#FF3D00" d="M43.2,33.9c-0.4,2.1-2.1,3.7-4.2,4c-3.3,0.5-8.8,1.1-15,1.1c-6.1,0-11.6-0.6-15-1.1c-2.1-0.3-3.8-1.9-4.2-4C4.4,31.6,4,28.2,4,24c0-4.2,0.4-7.6,0.8-9.9c0.4-2.1,2.1-3.7,4.2-4C12.3,9.6,17.8,9,24,9c6.2,0,11.6,0.6,15,1.1c2.1,0.3,3.8,1.9,4.2,4c0.4,2.3,0.9,5.7,0.9,9.9C44,28.2,43.6,31.6,43.2,33.9z"></path><path fill="#FFF" d="M20 31L20 17 32 24z"></path>
+                       </svg>
+                       <p class="font-extrabold text-xs md:text-base">YouTube<sup>BR</sup></p>
+                </div>
+
+                 <div class="hidden md:flex max-w-[600px] flex-1 mr-4 items-center ml-20">
+                       <input class="outline-none w-full  text-white bg-black border
+                        border-gray-500 rounded-l-full focus:border-focusInput py-2 px-4" type="text" placeholder="pesquisar">
+                       <i class="ri-search-line md:text-xl cursor-pointer bg-bgIcon rounded-r-full py-[6px] px-4 border border-l-0 border-gray-500"></i>
+                       <i class="ri-mic-fill md:text-xl cursor-pointer ml-5 rounded-full px-2 py-1 bg-bgIcon"></i>
+                 </div>
+
+                 <div class="flex items-center mr-4 md:mr-3 gap-2 md:gap-6">
+                       <i class="ri-video-add-line md:text-xl cursor-pointer rounded-full px-2 py-1 hover:bg-bgIcon duration-200"></i>
+                       <div class="relative">
+                             <i class="ri-notification-3-line md:text-xl cursor-pointer rounded-full px-2 py-1 hover:bg-bgIcon duration-200"></i>
+                             <div class="text-[9px] md:text-xs bg-bgNotificacao 
+                               rounded-full flex 
+                               justify-center absolute px-1 top-0 left-4">9+</div> 
+                       </div>
+                       <i class="ri-search-line md:hidden md:text-xl cursor-pointer rounded-full px-2 py-1 hover:bg-bgIcon duration-200"></i>
+                       <div class="hidden md:flex bg-bgIconConta rounded-full px-3 py-1">
+                           A
+                       </div>
+                 </div>
+             </header>
+            
+
+           <!--segura SideBar e assunto principal-->  
+         <main class="md:flex flex-col w-screen">
+           <div class="sideBar hidden md:flex md:w-[100px] lg:flex flex-col bg-zinc-950 lg:w-[250px] fixed left-0 h-screen top-[65px] overflow-y-scroll">
+             <div class="flex flex-col py-3 px-3 mt-2 border-b-2 border-sideBarItemHover">
+                 <div class="py-2 px-3 rounded-lg flex md:flex-col lg:flex-row items-center gap-2 cursor-pointer hover:bg-sideBarItemHover duration-200"><i class="ri-home-line text-lg"></i>Inicio</div>   
+                 <div class="py-2 px-3 rounded-lg flex md:flex-col lg:flex-row items-center gap-2 cursor-pointer hover:bg-sideBarItemHover duration-200"><i class="ri-wireless-charging-line text-lg"></i>Shorts</div>   
+                 <div class="py-2 px-3 rounded-lg flex md:flex-col lg:flex-row items-center gap-2 cursor-pointer hover:bg-sideBarItemHover duration-200"><i class="ri-play-circle-line  text-lg"></i>Inscrições</div>   
+             </div>
+
+           <div class="md:hidden lg:flex flex-col py-3 px-3 mt-2 border-b-2 border-sideBarItemHover">
+                 <div class="py-2 px-3 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-sideBarItemHover duration-200"><i class="ri-play-list-2-line text-lg"></i>Biblioteca</div>   
+                 <div class="py-2 px-3 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-sideBarItemHover duration-200"><i class="ri-replay-10-fill text-lg"></i>Histórico</div>   
+                 <div class="py-2 px-3 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-sideBarItemHover duration-200"><i class="ri-movie-line text-lg"></i>Seus vídeos</div>   
+                 <div class="py-2 px-3 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-sideBarItemHover duration-200"><i class="ri-lightbulb-line text-lg"></i>Seus cursos</div>   
+                 <div class="py-2 px-3 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-sideBarItemHover duration-200"><i class="ri-chat-history-line text-lg"></i>Assistir mais tarde</div>   
+                 <div class="py-2 px-3 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-sideBarItemHover duration-200"><i class="ri-arrow-down-s-line text-lg"></i>Mostrar mais</div>   
+           </div>  
+           <div class="md:hidden lg:flex flex-col gap-2 py-3 px-3 mt-2 border-b-2 border-sideBarItemHover">
+                 <span class="text-lg font-bold mb-2">Inscrições</span> 
+               <div class="relative py-2 px-3 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-sideBarItemHover duration-200">
+                     <div class="rounded-full w-6">
+                         <img class="rounded-full w-full object-cover" src="canais/fiaspo.jpg" alt="fiaspo"> 
+                     </div>
+                     Fiaspo
+                     <div class="bg-corPonto w-1 h-1 rounded-full absolute top-1/2 right-2"></div>
+               </div>   
+               <div class="relative py-2 px-3 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-sideBarItemHover duration-200">
+                     <div class="rounded-full w-6">
+                         <img class="rounded-full w-full object-cover" src="canais/web dev.jpg" alt="webdev"> 
+                     </div>
+                     Web Dev Simplified
+                     <div class="bg-corPonto w-1 h-1 rounded-full absolute top-1/2 right-2"></div>
+               </div>   
+               <div class="py-2 px-3 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-sideBarItemHover duration-200">
+                     <div class="rounded-full w-6">
+                         <img class="rounded-full w-full object-cover" src="canais/Cs jackiejpg.jpg" alt="csjack"> 
+                     </div>
+                     Cs Jackie
+               </div>   
+               <div class="py-2 px-3 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-sideBarItemHover duration-200">
+                   <div class="rounded-full w-6">
+                       <img class="rounded-full w-full object-cover" src="canais/curso em video.jpg" alt="curso"> 
+                   </div>
+                   Curso em video
+                  
+               </div>   
+               <div class="relative py-2 px-3 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-sideBarItemHover duration-200">
+                   <div class="rounded-full w-6">
+                       <img class="rounded-full w-full object-cover" src="canais/joma.jpg" alt="jomma"> 
+                   </div>
+                   Joma tech
+                   <div class="bg-corPonto w-1 h-1 rounded-full absolute top-1/2 right-2"></div>
+               </div>   
+               <div class="py-2 px-3 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-sideBarItemHover duration-200"><i class="ri-arrow-down-s-line text-lg"></i>Mostrar mais 25</div>  
+           </div>  
+   
+           <div class="md:hidden lg:flex flex-col py-3 px-3 mt-2 border-b-2 border-sideBarItemHover">
+               <span class="text-lg font-bold mb-2">Explorar</span>
+               <div class="py-2 px-3 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-sideBarItemHover duration-200"><i class="ri-meteor-fill text-lg"></i>Em alta</div>   
+               <div class="py-2 px-3 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-sideBarItemHover duration-200"><i class="ri-shopping-bag-2-line text-lg"></i>Shopping</div>   
+               <div class="py-2 px-3 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-sideBarItemHover duration-200"><i class="ri-music-fill text-lg"></i>Musica</div>   
+               <div class="py-2 px-3 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-sideBarItemHover duration-200"><i class="ri-clapperboard-fill text-lg"></i>Filmes</div>   
+               <div class="py-2 px-3 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-sideBarItemHover duration-200"><i class="ri-rfid-line text-lg"></i>Ao vivo</div>   
+               <div class="py-2 px-3 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-sideBarItemHover duration-200"><i class="ri-gamepad-line text-lg"></i>Jogos</div>   
+               <div class="py-2 px-3 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-sideBarItemHover duration-200"><i class="ri-newspaper-line text-lg"></i>Noticias</div>   
+               <div class="py-2 px-3 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-sideBarItemHover duration-200"><i class="ri-trophy-line text-lg"></i>Exportes</div>   
+               <div class="py-2 px-3 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-sideBarItemHover duration-200"><i class="ri-lightbulb-line text-lg"></i>Aprender</div>   
+               <div class="py-2 px-3 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-sideBarItemHover duration-200"><i class="ri-base-station-line text-lg"></i>Podcasts</div>   
+           </div> 
+           <div class="md:hidden lg:flex flex-col py-3 px-3 mt-2 border-b-2 border-sideBarItemHover">
+               <span class="text-lg font-bold mb-2">Mais do Youtube</span>
+               <div class="py-2 px-3 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-sideBarItemHover duration-200">
+                   <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 48 48">
+                       <path fill="#FF3D00" d="M43.2,33.9c-0.4,2.1-2.1,3.7-4.2,4c-3.3,0.5-8.8,1.1-15,1.1c-6.1,0-11.6-0.6-15-1.1c-2.1-0.3-3.8-1.9-4.2-4C4.4,31.6,4,28.2,4,24c0-4.2,0.4-7.6,0.8-9.9c0.4-2.1,2.1-3.7,4.2-4C12.3,9.6,17.8,9,24,9c6.2,0,11.6,0.6,15,1.1c2.1,0.3,3.8,1.9,4.2,4c0.4,2.3,0.9,5.7,0.9,9.9C44,28.2,43.6,31.6,43.2,33.9z"></path><path fill="#FFF" d="M20 31L20 17 32 24z"></path>
+                   </svg>
+                   Youtube premium
+               </div>   
+               <div class="py-2 px-3 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-sideBarItemHover duration-200">
+                   <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 48 48">
+                       <path fill="#ff3d00" d="M42,32.84V15.945c0-1.081-0.581-2.078-1.521-2.61l-15-8.497c-0.917-0.52-2.04-0.52-2.957,0 l-15,8.497C6.581,13.867,6,14.864,6,15.945V32.84c0,1.081,0.581,2.078,1.521,2.61l15,8.497c0.917,0.52,2.04,0.52,2.957,0l15-8.497 C41.419,34.918,42,33.921,42,32.84z"></path><path fill="#fff" d="M24,37.941c-0.682,0-1.363-0.172-1.972-0.517l-8.821-4.997c-1.251-0.708-2.029-2.042-2.029-3.48 v-9.895c0-1.438,0.777-2.772,2.029-3.48l8.821-4.997c1.216-0.689,2.726-0.689,3.943,0l8.821,4.997 c1.251,0.708,2.029,2.042,2.029,3.48v9.895c0,1.438-0.777,2.772-2.029,3.48l-8.821,4.997C25.363,37.77,24.682,37.941,24,37.941z M24,12.057c-0.341,0-0.682,0.087-0.985,0.259l-8.822,4.997c-0.625,0.354-1.014,1.021-1.014,1.74v9.895 c0,0.72,0.389,1.386,1.014,1.74l8.821,4.997c0.608,0.344,1.364,0.344,1.971,0l8.822-4.997c0.625-0.354,1.014-1.021,1.014-1.74 v-9.895c0-0.72-0.389-1.386-1.014-1.74l-8.821-4.997C24.682,12.144,24.341,12.057,24,12.057z"></path><polygon fill="#fff" points="20,18 20,30 30,24"></polygon>
+                   </svg>
+                   Youtube studio
+               </div>   
+               <div  class="py-2 px-3 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-sideBarItemHover duration-200">
+                   <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 48 48">
+                       <circle cx="24" cy="24" r="20" fill="#f44336"></circle><polygon fill="#fff" points="21,29 29,24 21,19"></polygon><path fill="none" stroke="#fff" stroke-miterlimit="10" d="M24,14c5.5,0,10,4.476,10,10s-4.476,10-10,10	s-10-4.476-10-10S18.5,14,24,14"></path>
+                   </svg>
+                   Youtube Music
+               </div>   
+               <div class="py-2 px-3 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-sideBarItemHover duration-200">
+                   <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 48 48">
+                       <path fill="#ef4823" d="M2.771,27.348c-0.507-3.402-0.287-6.486,0.411-9.854c0.231-1.115,0.536-2.227,1.075-3.232 c1.761-3.28,5.685-4.823,9.4-5.24c3.715-0.416,7.283-0.221,11.015-0.437c5.51-0.319,10.337,0.289,15.482,1.48 c0.795,0.184,1.606,0.375,2.297,0.807c1.592,0.996,2.172,3.002,2.485,4.847c0.944,5.56,0.612,11.258-0.034,16.86 c-0.169,1.462-0.396,3.008-1.345,4.137c-0.848,1.008-2.146,1.522-3.422,1.867c-3.363,0.909-6.898,0.904-10.384,0.893 c-4.226-0.014-8.453-0.027-12.679-0.041c-4.114-0.013-8.593-0.152-11.757-2.766c-0.681-0.562-1.288-1.243-1.615-2.061 c-0.238-0.594-0.319-1.236-0.399-1.87C3.043,30.684,3.076,29.396,2.771,27.348z"></path><path fill="#010101" d="M46.014,22.201c-0.043-2.331-0.227-4.68-0.66-6.974c-0.32-1.695-0.914-3.51-2.355-4.582 c-0.828-0.616-1.837-0.861-2.826-1.088c-1.117-0.257-2.239-0.491-3.367-0.693c-2.19-0.393-4.403-0.67-6.625-0.791 c-2.37-0.129-4.715,0.005-7.082,0.083c-2.385,0.078-4.773,0.044-7.156,0.178C12.206,8.545,8.202,9.239,5.4,11.945 c-1.462,1.412-2.226,3.233-2.653,5.193c-0.493,2.258-0.786,4.579-0.75,6.892c0.018,1.157,0.127,2.306,0.292,3.451 c0.309,2.133,0.248,4.331,0.692,6.444c0.41,1.951,1.987,3.338,3.682,4.242c3.576,1.908,7.845,1.759,11.778,1.772 c4.917,0.016,9.85,0.142,14.766,0.013c2.371-0.062,4.766-0.263,7.063-0.887c1.88-0.511,3.625-1.413,4.428-3.285 c0.382-0.89,0.537-1.846,0.657-2.801c0.148-1.173,0.266-2.352,0.369-3.53C45.936,27.04,46.059,24.62,46.014,22.201z M44.402,32.579 c-0.235,2.017-0.695,3.903-2.647,4.888c-1.855,0.936-4.13,1.202-6.173,1.365c-4.485,0.358-9.042,0.134-13.537,0.119 c-2.184-0.007-4.37,0.012-6.554-0.032c-1.836-0.037-3.685-0.145-5.477-0.573c-1.788-0.427-3.56-1.193-4.874-2.512 c-1.49-1.496-1.431-3.717-1.579-5.693c-0.073-0.979-0.168-1.954-0.308-2.926c-0.319-2.207-0.333-4.443-0.074-6.658 c0.244-2.092,0.565-4.432,1.642-6.278c1.748-2.998,5.377-4.328,8.657-4.736c2.197-0.274,4.422-0.298,6.633-0.329 c2.202-0.031,4.398-0.168,6.599-0.206c4.259-0.074,8.481,0.461,12.633,1.384c0.959,0.213,2.013,0.378,2.857,0.911 c0.754,0.476,1.265,1.246,1.599,2.058c0.744,1.809,0.912,3.9,1.069,5.828C45.23,23.651,44.92,28.143,44.402,32.579z"></path><path fill="#d6e5e5" d="M19.6,17.534C19,22,19.78,26.353,19.7,30.466c3.819-2.139,7.937-4.278,11.757-6.417 c-1.568-0.967-3.336-1.955-4.998-2.75C24.247,20.242,21.461,18.791,19.6,17.534z"></path><path fill="#010101" d="M31.709,23.617c-3.848-2.363-8.1-4-11.857-6.515c-0.154-0.103-0.302-0.098-0.426-0.041 c-0.147,0.036-0.272,0.138-0.308,0.339c-0.431,2.392-0.563,4.791-0.357,7.213c0.166,1.952,0.469,3.887,0.439,5.851 c-0.006,0.386,0.427,0.614,0.752,0.432c3.897-2.179,7.86-4.237,11.757-6.417C32.044,24.293,32.022,23.81,31.709,23.617z M19.775,24.774c-0.192-2.15-0.119-4.281,0.206-6.408c3.349,2.13,7.034,3.667,10.461,5.667c-3.407,1.889-6.852,3.71-10.259,5.599 C20.137,28.007,19.919,26.396,19.775,24.774z"></path>
+                   </svg>
+                   Youtube Kids
+               </div>   
+           </div>
+
+           <div class="md:hidden lg:flex flex-col py-3 px-3 mt-2 border-b-2 border-sideBarItemHover">
+                 <div class="py-2 px-3 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-sideBarItemHover duration-200"><i class="ri-settings-2-line text-lg"></i>Configurações</div>   
+                 <div class="py-2 px-3 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-sideBarItemHover duration-200"><i class="ri-flag-line text-lg"></i>Historico de denuncia</div>   
+                 <div class="py-2 px-3 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-sideBarItemHover duration-200"><i class="ri-questionnaire-fill text-lg"></i>Ajuda</div>   
+                 <div class="py-2 px-3 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-sideBarItemHover duration-200"><i class="ri-feedback-fill text-lg"></i>Enviar Feedback</div>   
+           </div> 
+
+           <div class="md:hidden lg:flex flex-col py-3 px-3 mt-2">
+               <div class="py-2 px-3 mb-16">
+                   <p class="text-sm mb-3 text-gray-300">Sobre Imprensa Direitos autorais Entre em contato Criadores de conteúdo Publicidade Desenvolvedores
+                   Termos PrivacidadePolítica e segurança Como funciona o YouTube Testar os novos recursos</p>
+                   <p class="text-xs"><i class="ri-copyright-line"></i>2023 Google LLC</p>
+   
+               </div> 
+           </div> 
+        </div>          
+           
+        
+       <div class="z-10 hidden assunto wrapper lg:flex bg-zinc-950 py-3 px-3 items-center lg:ml-[250px] md:ml-[100px] mt-[60px] relative snap-x snap-mandatory lg:fixed">
+         <i class="ri-arrow-left-s-line hidden shadow drop-shadow-iconShadow text-xl prev absolute py-2 px-3 left-2 cursor-pointer rounded-full bg-black hover:bg-bgIcon"></i>
+         <div class="slider flex items-center gap-4 font-bold whitespace-nowrap overflow-hidden scroll-smooth snap-start">
+           
+           <div class="bg-gray-100 text-sm text-black py-2 px-3 rounded-lg select-none">
+             Tudo    
+           </div>
+           <div class="bg-bgIcon text-sm py-2 px-3 rounded-lg select-none hover:bg-bgAssunto duration-200 cursor-pointer">
+             Jogos
+           </div>
+           <div class="bg-bgIcon text-sm py-2 px-3 rounded-lg select-none hover:bg-bgAssunto duration-200 cursor-pointer">
+             Trailer
+           </div>
+           <div  class="bg-bgIcon text-sm py-2 px-3 rounded-lg select-none hover:bg-bgAssunto duration-200 cursor-pointer">
+             Musica
+           </div>
+           <div  class="bg-bgIcon text-sm py-2 px-3 rounded-lg select-none hover:bg-bgAssunto duration-200 cursor-pointer">
+             Serras
+           </div>
+           <div  class="bg-bgIcon text-sm py-2 px-3 rounded-lg select-none hover:bg-bgAssunto duration-200 cursor-pointer">
+             Animação
+           </div>
+           <div  class="bg-bgIcon text-sm py-2 px-3 rounded-lg select-none hover:bg-bgAssunto duration-200 cursor-pointer">
+             dublagem
+           </div>
+           <div  class="bg-bgIcon text-sm py-2 px-3 rounded-lg select-none hover:bg-bgAssunto duration-200 cursor-pointer">
+             Ao vivo
+           </div>
+           <div  class="bg-bgIcon text-sm py-2 px-3 rounded-lg select-none hover:bg-bgAssunto duration-200 cursor-pointer">
+             lista de reprodução
+           </div>
+           <div  class="bg-bgIcon text-sm py-2 px-3 rounded-lg select-none hover:bg-bgAssunto duration-200 cursor-pointer">
+             Inteligencia artificial
+           </div>
+           <div class="bg-bgIcon text-sm py-2 px-3 rounded-lg select-none hover:bg-bgAssunto duration-200 cursor-pointer">
+             assunto
+           </div>
+           <div  class="bg-bgIcon text-sm py-2 px-3 rounded-lg select-none hover:bg-bgAssunto duration-200 cursor-pointer">
+             assunto
+           </div>
+           <div  class="bg-bgIcon text-sm py-2 px-3 rounded-lg select-none hover:bg-bgAssunto duration-200 cursor-pointer">
+             assunto
+           </div>
+           <div  class="bg-bgIcon text-sm py-2 px-3 rounded-lg select-none hover:bg-bgAssunto duration-200 cursor-pointer">
+             assunto
+           </div>
+           <div  class="bg-bgIcon text-sm py-2 px-3 rounded-lg select-none hover:bg-bgAssunto duration-200 cursor-pointer">
+             assunto
+           </div>
+           <div  class="bg-bgIcon text-sm py-2 px-3 rounded-lg select-none hover:bg-bgAssunto duration-200 cursor-pointer">
+             assunto
+           </div>
+           <div  class="bg-bgIcon text-sm py-2 px-3 rounded-lg select-none hover:bg-bgAssunto duration-200 cursor-pointer">
+             assunto
+           </div>
+           <div  class="bg-bgIcon text-sm py-2 px-3 rounded-lg select-none hover:bg-bgAssunto duration-200 cursor-pointer">
+             assunto
+           </div>
+           <div  class="bg-bgIcon text-sm py-2 px-3 rounded-lg select-none hover:bg-bgAssunto duration-200 cursor-pointer">
+             assunto
+           </div>
+           <div  class="bg-bgIcon text-sm py-2 px-3 rounded-lg select-none hover:bg-bgAssunto duration-200 cursor-pointer">
+             assunto
+           </div>
+       </div>   
+         <i class="ri-arrow-drop-right-line shadow drop-shadow-iconShadow text-xl next absolute py-2 px-3 right-2 cursor-pointer rounded-full bg-black hover:bg-bgIcon"></i>           
+      </div>       
+     </main>
+
+  
+     <div class="max-w-[1290px] grid gap-3 py-2 px-1 md:px-2 md:py-2 md:ml-[100px] lg:ml-[250px] bg-zinc-950 mt-[50px] justify-center md:mt-[100px] lg:mt-[150px] grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+       
+          <article class="cursor-pointer flex flex-col gap-2">
+                 <div class="relative">
+                     <img class="w-full rounded-lg object-cover block" src="images/9.jpg" alt="img9">
+                     <div class="text-xs bg-black absolute right-1 bottom-1 px-1 py-1 rounded-lg">12:35</div>
+                 </div>
+                <div class="flex gap-3">                   
+                     <img class="w-10 h-10 block rounded-full" src="canais/joma.jpg" alt="jomma">
+                     
+                    <div> 
+                       <div class="flex flex-col">
+                           <p class="block text-lg font-bold">day in life of a data science</p>
+                           <span class="block text-sm text-gray-300">Joma Tech</span>                       
+                       </div>  
+                       
+                       <div class="flex gap-1">
+                           <span class="block text-xs text-gray-300">543 mil visualizações</span>
+                           <p class="text-xs text-gray-300">Há 4 anos</p>
+                       </div>
+                   </div>
+            </article>
+
+          <article class="cursor-pointer flex flex-col gap-2">
+                 <div class="relative">
+                   <img class="w-full rounded-lg object-cover block" src="images/10.jpg" alt="img10">
+                   <div class="text-xs bg-black absolute right-1 bottom-1 px-1 py-1 rounded-lg">12:35</div>
+               </div>
+                 <div class="flex gap-3">
+                    <img class="w-10 h-10 block rounded-full" src="canais/fiaspo.jpg" alt="fiaspo">
+                  <div>
+
+                    <div class="flex flex-col">
+                      <p class="block text-lg font-bold">Game the walking dead</p>
+                      <span class="block text-sm text-gray-300">Fiaspo</span>                       
+                    </div>  
+
+                     <div class="flex gap-1">
+                       <span class="block text-xs text-gray-300">100 mil visualizações</span>
+                       <p class="text-xs text-gray-300">Há 2 anos</p>
+                     </div>
+                 </div>
+               </div>
+          </article>    
+          <article class="cursor-pointer flex flex-col gap-2">
+            <div class="relative">
+               <img class="w-full rounded-lg object-cover block" src="images/8.jpg" alt="img8">
+               <div class="text-xs bg-black absolute right-1 bottom-1 px-1 py-1 rounded-lg">12:35</div>
+
+            </div>
+               <div class="flex gap-3">
+                  <img class="w-10 h-10 block rounded-full" src="canais/joma.jpg" alt="jomma">
+                  <div>
+
+                    <div class="flex flex-col">
+                      <p class="block text-lg font-bold">Data scientist vs Data engineer</p>
+                      <span class="block text-sm text-gray-300">Joma Tech</span>                       
+                    </div>  
+
+                     <div class="flex gap-1">
+                       <span class="block text-xs text-gray-300">1mi visualizações</span>
+                       <p class="text-xs text-gray-300">Há 4 anos</p>
+                     </div>
+                 </div>
+               </div>
+          </article>    
+          <article class="cursor-pointer flex flex-col gap-2">
+           <div class="relative">
+             <img class="w-full rounded-lg object-cover block" src="images/7.jpg" alt="img7">
+             <div class="text-xs bg-black absolute right-1 bottom-1 px-1 py-1 rounded-lg">15:35</div>
+
+          </div>
+               <div class="flex gap-3">
+                  <img class="w-10 h-10 block rounded-full" src="canais/balerine.jpg" alt="ballerine">
+                  <div>
+
+                    <div class="flex flex-col">
+                      <p class="block text-lg font-bold">Dicas de Livros</p>
+                      <span class="block text-sm">Rafaella Ballerini</span>                       
+                    </div>  
+
+                     <div class="flex gap-1">
+                       <span class="block text-xs text-gray-300">543 mil visualizações</span>
+                       <p class="text-xs text-gray-300">Há 4 anos</p>
+                     </div>
+                 </div>
+               </div>
+          </article>    
+          <article class="cursor-pointer flex flex-col gap-2">
+           <div class="relative">
+             <img class="w-full rounded-lg object-cover block" src="images/6.jpg" alt="img6">
+             <div class="text-xs bg-black absolute right-1 bottom-1 px-1 py-1 rounded-lg">1:12:22</div>
+
+          </div>
+               <div class="flex gap-3">
+                  <img class="w-10 h-10 block rounded-full" src="canais/nostalgia.jpg" alt="nostalgia">
+                  <div>
+
+                    <div class="flex flex-col">
+                      <p class="block text-lg font-bold">Retrospectiva</p>
+                      <span class="block text-sm">Canal Nostalgia</span>                       
+                    </div>  
+
+                     <div class="flex gap-1">
+                       <span class="block text-xs text-gray-300">1mi visualizações</span>
+                       <p class="text-xs text-gray-300">Há 4 anos</p>
+                     </div>
+                 </div>
+               </div>
+          </article>    
+          <article class="cursor-pointer flex flex-col gap-2">
+           <div class="relative">
+             <img class="w-full rounded-lg object-cover block" src="images/5.jpg" alt="img5">
+             <div class="text-xs bg-black absolute right-1 bottom-1 px-1 py-1 rounded-lg">22:35</div>
+
+          </div>
+               <div class="flex gap-3">
+                  <img class="w-10 h-10 block rounded-full" src="canais/nostalgia.jpg" alt="nostalgia">
+                  <div>
+
+                    <div class="flex flex-col">
+                      <p class="block text-lg font-bold">show nostalgia</p>
+                      <span class="block text-sm text-gray-300">Canal Nostalgia</span>                       
+                    </div>  
+
+                     <div class="flex gap-1">
+                       <span class="block text-xs text-gray-300">543 mil visualizações</span>
+                       <p class="text-xs text-gray-300">Há 7 anos</p>
+                     </div>
+                 </div>
+               </div>
+          </article>    
+          <article class="cursor-pointer flex flex-col gap-2">
+           <div class="relative">
+             <img class="w-full rounded-lg object-cover block" src="images/4.jpg" alt="img4">
+             <div class="text-xs bg-black absolute right-1 bottom-1 px-1 py-1 rounded-lg">12:35</div>
+
+          </div>
+               <div class="flex gap-3">
+                  <img class="w-10 h-10 block rounded-full" src="canais/intoxi anime.jpg" alt="intoxi">
+                  <div>
+
+                    <div class="flex flex-col">
+                      <p class="block text-lg font-bold">Guia de animes</p>
+                      <span class="block text-sm text-gray-300">Intoxi anime</span>                       
+                    </div>  
+
+                     <div class="flex gap-1">
+                       <span class="block text-xs text-gray-300">543 mil visualizações</span>
+                       <p class="text-xs text-gray-300">Há 4 anos</p>
+                     </div>
+                 </div>
+               </div>
+          </article>    
+          <article class="cursor-pointer flex flex-col gap-2">
+           <div class="relative">
+             <img class="w-full rounded-lg object-cover block" src="images/3.jpg" alt="img3">
+             <div class="text-xs bg-black absolute right-1 bottom-1 px-1 py-1 rounded-lg">12:35</div>
+
+          </div>
+               <div class="flex gap-3">
+                  <img class="w-10 h-10 block rounded-full" src="canais/fiaspo.jpg" alt="fiaspo">
+                  <div>
+
+                    <div class="flex flex-col">
+                      <p class="block text-lg font-bold">Fiaspo jogando SIM CITY</p>
+                      <span class="block text-sm text-gray-300">Fiaspo</span>                       
+                    </div>  
+
+                     <div class="flex gap-1">
+                       <span class="block text-xs text-gray-300">1mi visualizações</span>
+                       <p class="text-xs text-gray-300">Há 4 anos</p>
+                     </div>
+                 </div>
+               </div>
+          </article>    
+          <article class="cursor-pointer flex flex-col gap-2">
+               <div class="relative">
+                 <img class="w-full rounded-lg object-cover block" src="images/2.jpg" alt="img2">
+               <div class="text-xs bg-black absolute right-1 bottom-1 px-1 py-1 rounded-lg">12:35</div>
+               </div>
+                 <div class="flex gap-3">
+                   <img class="w-10 h-10 block rounded-full" src="canais/aladin.jpg" alt="aladin">
+                  <div>
+
+                    <div class="flex flex-col">
+                      <p class="block text-lg font-bold">Passando do 3 ano</p>
+                      <span class="block text-sm text-gray-300">Aladim</span>                       
+                    </div>  
+
+                     <div class="flex gap-1">
+                       <span class="block text-xs text-gray-300">543 mil visualizações</span>
+                       <p class="text-xs text-gray-300">Há 4 anos</p>
+                     </div>
+                 </div>
+               </div>
+          </article>    
+          <article class="cursor-pointer flex flex-col gap-2">
+            <div class="relative">
+              <img class="w-full rounded-lg object-cover block" src="images/11.jpg" alt="img11">
+            <div class="text-xs bg-black absolute right-1 bottom-1 px-1 py-1 rounded-lg">12:35</div>
+           </div>
+               <div class="flex gap-3">
+                  <img class="w-10 h-10 block rounded-full" src="canais/web dev.jpg" alt="webdev">
+                  <div>
+
+                    <div class="flex flex-col">
+                      <p class="block text-lg font-bold">Lear use State in 15 minutes</p>
+                      <span class="block text-sm text-gray-300">Web dev simplified</span>                       
+                    </div>  
+
+                     <div class="flex gap-1">
+                       <span class="block text-xs text-gray-300">543 mil visualizações</span>
+                       <p class="text-xs text-gray-300">Há 4 anos</p>
+                     </div>
+                 </div>
+               </div>
+          </article>    
+          <article class="cursor-pointer flex flex-col gap-2">
+               <div class="relative">
+                 <img class="w-full rounded-lg object-cover block" src="images/12.jpg" alt="img12">
+                 <div class="text-xs bg-black absolute right-1 bottom-1 px-1 py-1 rounded-lg">30:35</div>
+             </div>
+               <div class="flex gap-3">
+                  <img class="w-10 h-10 block rounded-full" src="canais/ted talk.jpg" alt="tedtalk">
+                  <div>
+
+                    <div class="flex flex-col">
+                      <p class="block text-lg font-bold">Be better at conversation</p>
+                      <span class="block text-sm text-gray-300">TED</span>                       
+                    </div>  
+
+                     <div class="flex gap-1">
+                       <span class="block text-xs text-gray-300">2,5 mi visualizações</span>
+                       <p class="text-xs text-gray-300">Há 4 anos</p>
+                     </div>
+                 </div>
+               </div>
+          </article>    
+          <article class="cursor-pointer flex flex-col gap-2">
+             <div class="relative">
+               <img class="w-full rounded-lg object-cover block" src="images/14.jpg" alt="img14">
+               <div class="text-xs bg-black absolute right-1 bottom-1 px-1 py-1 rounded-lg">10:35</div>
+             </div>
+               <div class="flex gap-3">
+                  <img class="w-10 h-10 block rounded-full" src="canais/intoxi anime.jpg" alt="intoxi">
+                  <div>
+
+                    <div class="flex flex-col">
+                      <p class="block text-lg font-bold">Avaliando animes</p>
+                      <span class="block text-sm text-gray-300">Intoxi anime</span>                       
+                    </div>  
+
+                     <div class="flex gap-1">
+                       <span class="block text-xs text-gray-300">543 mil visualizações</span>
+                       <p class="text-xs text-gray-300">Há 4 anos</p>
+                     </div>
+                 </div>
+               </div>
+          </article>    
+          <article class="cursor-pointer flex flex-col gap-2">
+             <div class="relative">
+               <img class="w-full rounded-lg object-cover block" src="images/14.jpg" alt="img14">
+               <div class="text-xs bg-black absolute right-1 bottom-1 px-1 py-1 rounded-lg">10:35</div>
+             </div>
+               <div class="flex gap-3">
+                  <img class="w-10 h-10 block rounded-full" src="canais/intoxi anime.jpg" alt="intoxi">
+                  <div>
+
+                    <div class="flex flex-col">
+                      <p class="block text-lg font-bold">Avaliando animes</p>
+                      <span class="block text-sm text-gray-300">Intoxi anime</span>                       
+                    </div>  
+
+                     <div class="flex gap-1">
+                       <span class="block text-xs text-gray-300">543 mil visualizações</span>
+                       <p class="text-xs text-gray-300">Há 4 anos</p>
+                     </div>
+                 </div>
+               </div>
+          </article>    
+          <article class="cursor-pointer flex flex-col gap-2">
+             <div class="relative">
+               <img class="w-full rounded-lg object-cover block" src="images/10.jpg" alt="img10">
+               <div class="text-xs bg-black absolute right-1 bottom-1 px-1 py-1 rounded-lg">10:35</div>
+             </div>
+               <div class="flex gap-3">
+                  <img class="w-10 h-10 block rounded-full" src="canais/fiaspo.jpg" alt="fiaspo">
+                  <div>
+
+                    <div class="flex flex-col">
+                      <p class="block text-lg font-bold">the walking dead</p>
+                      <span class="block text-sm text-gray-300">Fiaspo</span>                       
+                    </div>  
+
+                     <div class="flex gap-1">
+                       <span class="block text-xs text-gray-300">543 mil visualizações</span>
+                       <p class="text-xs text-gray-300">Há 3 anos</p>
+                     </div>
+                 </div>
+               </div>
+          </article>    
+          <article class="cursor-pointer flex flex-col gap-2">
+             <div class="relative">
+               <img class="w-full rounded-lg object-cover block" src="images/11.jpg" alt="img11">
+               <div class="text-xs bg-black absolute right-1 bottom-1 px-1 py-1 rounded-lg">10:35</div>
+             </div>
+               <div class="flex gap-3">
+                  <img class="w-10 h-10 block rounded-full" src="canais/web dev.jpg" alt="webdev">
+                  <div>
+
+                    <div class="flex flex-col">
+                      <p class="block text-lg font-bold">learn useState in 15 minutes</p>
+                      <span class="block text-sm text-gray-300">Web dev simplified</span>                       
+                    </div>  
+
+                     <div class="flex gap-1">
+                       <span class="block text-xs text-gray-300">700 mil visualizações</span>
+                       <p class="text-xs text-gray-300">Há 4 anos</p>
+                     </div>
+                 </div>
+               </div>
+          </article>    
+     </div>        
+       
+    </main>
+
+</body>
+</html>
